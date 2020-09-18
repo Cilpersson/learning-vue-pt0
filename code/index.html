@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="nav-bar"></nav>
+    <div id="app">
+      <div class="product">
+        <div class="product-image">
+          <!--
+                v-bind: dynamically binds ant attribute (in this case src) 
+                to an expression (in this case) image. Think of "image" as {{ image }}
+                v-bind:src="image" can just simply be written as :src="image"
+             -->
+          <img :src="image" />
+        </div>
+        <div class="product-info">
+          <h1>{{product}}</h1>
+          <!-- 
+            For conditional rendering of a single component instead of using v-if 
+            v-show is most often a better option. v-show will toggle the visability of the 
+            component insted  
+          -->
+          <p v-if="inStock">In stock</p>
+          <p v-else>Out of stock</p>
+
+          <ul>
+            <!--
+              Just as mapping or forEaching over a list. items.map(item => {
+                return item
+              })
+            -->
+            <li v-for="detail in details">{{ detail }}</li>
+          </ul>
+          <div v-for="variant in variants">
+            <p @mouseover="updateProduct(variant.variantImage)">
+              {{ variant.variantColor }}
+            </p>
+          </div>
+          <!--
+            v-on:click can be written as @click
+          -->
+          <button @click="addToCart">Add to cart</button>
+          <div class="cart">
+            <p>Cart({{ cart }})</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
