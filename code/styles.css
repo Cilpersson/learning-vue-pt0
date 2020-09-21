@@ -4,6 +4,10 @@ body {
   margin: 0px;
 }
 
+.product-text-OoS {
+  text-decoration: line-through;
+}
+
 .nav-bar {
   background: linear-gradient(-90deg, #84cf6a, #16c0b0);
   height: 60px;
@@ -56,7 +60,7 @@ button {
   font-size: 14px;
 }
 
-.disabledButton {
+.disabled-button {
   background-color: #d8d8d8;
 }
 
