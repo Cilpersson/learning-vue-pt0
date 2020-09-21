@@ -246,7 +246,7 @@ Vue.component("product-tabs", {
             {{ tab }}
       </span>
 
-      <div v-show="selectedTab === 'Review'">
+      <div v-show="selectedTab === 'Reviews'">
         <p v-if="!reviews.length">There are no reviews yet</p>
         <ul v-if="reviews.length !== []">
           <li v-for="(review, index) in reviews">
