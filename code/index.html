@@ -19,7 +19,7 @@
           <img :src="image" />
         </div>
         <div class="product-info">
-          <h1>{{product}}</h1>
+          <h1>{{ title }}</h1>
           <!-- 
             For conditional rendering of a single component instead of using v-if 
             v-show is most often a better option. v-show will toggle the visability of the 
@@ -37,11 +37,11 @@
             <li v-for="detail in details">{{ detail }}</li>
           </ul>
           <div
-            v-for="variant in variants"
+            v-for="(variant, index) in variants"
             :key="variant.variantId"
             class="color-box"
             :style="{ 'background-color': variant.variantColor }"
-            @mouseover="updateProduct(variant.variantImage)"
+            @mouseover="updateProduct(index)"
           ></div>
           <!--
             v-on:click can be written as @click
