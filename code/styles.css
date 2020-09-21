@@ -87,7 +87,7 @@ textarea {
   cursor: pointer;
 }
 
-.activeTab {
+.active-tab {
   color: #16c0b0;
   text-decoration: underline;
 }
@@ -98,4 +98,8 @@ li {
 
 ul {
   padding: 5px;
+}
+
+input[type="radio"] {
+  width: auto;
 }
